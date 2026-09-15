@@ -9,8 +9,17 @@ window.onload = function () {
     // Sidebar toggle
     var toggleBtn = document.getElementById('sidebarToggleBtn');
     var sidebar = document.getElementById('sidebarMenu');
+    var hamburger = document.getElementById('hamburgerIcon')
+
+    hamburger.classList.add('change');
+
     toggleBtn.addEventListener('click', function () {
         sidebar.classList.toggle('sidebar-closed');
+
+        hamburger.classList.toggle(
+            'change',
+            !sidebar.classList.contains('sidebar-closed')
+        )
         
     });
 
@@ -18,9 +27,7 @@ window.onload = function () {
     // Labs
     var LABS = [
         { key: 'lab0', label: 'Lab 0' },
-        { key: 'lab1', label: 'Lab 1' },
-        { key: 'lab2', label: 'Lab 2' },
-        { key: 'lab3', label: 'Lab 3' }
+        { key: 'lab1', label: 'Lab 1' }
     ];
 
     var navList = document.getElementById('sidebarNavList');
